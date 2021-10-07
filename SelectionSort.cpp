@@ -5,7 +5,7 @@
 #define MyArrayNums 10
 using namespace std;
 //选择排序
-//每一轮循环找到最小的那个数, 排到最前面
+//每一轮循环找到最小的那个数, 排到最前面.
 void test(vector<int>&vec, const int& nums)
 {
 	for (int i = 0; i < nums; ++i)
