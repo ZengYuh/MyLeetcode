@@ -6,7 +6,7 @@
 using namespace std;
 //冒泡排序
 //大泡下沉, 小泡上浮
-//每一轮最大的元素都会排到数组的末端
+//每一轮最大的元素都会排到数组的末端.
 void test(vector<int>&vec, const int& height)
 {
 	//冒泡排序
