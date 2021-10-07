@@ -6,7 +6,7 @@
 using namespace std;
 //插入排序
 //第一层遍历找到比前一个元素小的
-//小的往前找, 直到找到比自己小的, 便插入
+//小的往前找, 直到找到比自己小的, 便插入.
 void test(vector<int>&vec, const int& nums)
 {
 	for (int i = 1; i < nums; ++i)
