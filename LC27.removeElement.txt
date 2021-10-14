@@ -74,7 +74,80 @@ public:
 
 
 
-# LC26.删除排序数组中的重复项
+# LC26.删除有序数组中的重复项
+
+```c++
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        if(nums.size() <= 1) return nums.size();
+        int i = 0;
+        for(int j = 1; j < nums.size(); ++j)
+        {
+            if(nums[i] != nums[j])
+            {
+                nums[++i] = nums[j];
+            }
+            else
+            {
+                continue;//意味着两者相等, i的下一位已经可以被取代了.
+            }
+        }
+        return ++i;
+    }
+};
+```
+
+本题是删除重复项, 和LC27的区别是: LC27是删除和val相同的值, 可以取代当前下表的值, 而本题是在删除数组中重复的值, 就需要双指针永远有间隔.
 
 
+
+# LC283.移动零
+
+```c++
+//解法一:不实际移动0, 而是将0直接替换掉
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int slowIndex = 0;
+        for(int fastIndex = 0; fastIndex < nums.size(); ++fastIndex)
+        {
+            if(nums[fastIndex] != 0)
+                nums[slowIndex++] = nums[fastIndex];
+            
+            else 
+                continue;
+        }
+
+        for(int i = slowIndex; i < nums.size(); ++i)
+        {
+            nums[i] = 0;
+        }
+    }
+};
+```
+
+解法一和LC27思路一致
+
+```c++
+//解法二:运用双指针的写法实际移动0.
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int slowIndex = 0;
+        for(int fastIndex = 0; fastIndex < nums.size(); ++fastIndex)
+        {
+            if(nums[fastIndex])
+            {
+                swap(nums[slowIndex], nums[fastIndex]);
+                slowIndex++;
+            }
+            else
+            {
+                continue;
+            }
+        }
+    }
+};
+```
 
